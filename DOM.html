@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore DOM - Lines of Action</title>
+    <link rel="icon" href="https://placehold.co/32x32/1e293b/ffffff?text=LOA" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: #3b82f6;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background-color: #2563eb;
+            transform: scale(1.03);
+        }
+
+        .tree-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-family: monospace;
+            color: #1e293b;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .tag {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .text {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <h1>Árvore DOM</h1>
+    <a href="javascript:history.back()" class="back-button">⬅ Voltar</a>
+
+    <div class="tree-container">
+        <ul>
+            <li><span class="tag">&lt;html lang="pt-BR"&gt;</span>
+                <ul>
+                    <li><span class="tag">&lt;head&gt;</span>
+                        <ul>
+                            <li>&lt;meta charset="UTF-8"&gt;</li>
+                            <li>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</li>
+                            <li>&lt;title&gt;<span class="text">Lines of Action</span>&lt;/title&gt;</li>
+                            <li>&lt;link rel="icon" href="https://placehold.co/32x32/1e293b/ffffff?text=LOA"&gt;</li>
+                            <li>&lt;link rel="stylesheet" href="css/style.css"&gt;</li>
+                        </ul>
+                    </li>
+                    <li><span class="tag">&lt;body&gt;</span>
+                        <ul>
+                            <li><span class="tag">&lt;header&gt;</span>
+                                <ul>
+                                    <li>&lt;h1&gt;<span class="text">Lines of Action</span>&lt;/h1&gt;</li>
+                                    <li>&lt;nav&gt;
+                                        <ul>
+                                            <li>&lt;ul&gt;
+                                                <ul>
+                                                    <li>&lt;li&gt;&lt;a href="#sobre"&gt;Sobre o Jogo&lt;/a&gt;&lt;/li&gt;</li>
+                                                    <li>&lt;li&gt;&lt;a href="#regras"&gt;Regras&lt;/a&gt;&lt;/li&gt;</li>
+                                                    <li>&lt;li&gt;&lt;a href="#descricao"&gt;Descrição do Projeto&lt;/a&gt;&lt;/li&gt;</li>
+                                                    <li>&lt;li&gt;&lt;a href="DOM.html"&gt;Árvore DOM&lt;/a&gt;&lt;/li&gt;</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><span class="tag">&lt;div class="container"&gt;</span>
+                                <ul>
+                                    <li><span class="tag">&lt;main&gt;</span>
+                                        <ul>
+                                            <li><span class="tag">&lt;section id="sobre"&gt;</span>
+                                                <ul>
+                                                    <li>&lt;div class="section-title-container"&gt;
+                                                        <ul>
+                                                            <li>&lt;h2&gt;<span class="text">Sobre o Jogo</span>&lt;/h2&gt;</li>
+                                                            <li>&lt;div class="tooltip"&gt;
+                                                                <ul>
+                                                                    <li>&lt;span class="tooltip-trigger"&gt;?&lt;/span&gt;</li>
+                                                                    <li>&lt;div class="tooltip-content"&gt;
+                                                                        <ul>
+                                                                            <li>Fonte: &lt;a href="https://pt.wikipedia.org/wiki/Lines_of_Action"&gt;Wikipedia&lt;/a&gt;</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>&lt;p&gt;...&lt;/p&gt;</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="tag">&lt;section id="regras"&gt;</span>
+                                                <ul>
+                                                    <li>&lt;div class="section-title-container"&gt;
+                                                        <ul>
+                                                            <li>&lt;h2&gt;<span class="text">Regras</span>&lt;/h2&gt;</li>
+                                                            <li>&lt;div class="tooltip"&gt;
+                                                                <ul>
+                                                                    <li>&lt;span class="tooltip-trigger"&gt;?&lt;/span&gt;</li>
+                                                                    <li>&lt;div class="tooltip-content"&gt;
+                                                                        <ul>
+                                                                            <li>Fonte: &lt;a href="https://pt.wikipedia.org/wiki/Lines_of_Action"&gt;Wikipedia&lt;/a&gt;</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>&lt;ol&gt;
+                                                        <ul>
+                                                            <li>Regra 1 ...</li>
+                                                            <li>Regra 2 ...</li>
+                                                            <li>Regra 3 ...</li>
+                                                            <li>...</li>
+                                                            <li>Regra 10 ...</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="tag">&lt;section id="descricao"&gt;</span>
+                                                <ul>
+                                                    <li>&lt;div class="section-title-container"&gt;
+                                                        <ul>
+                                                            <li>&lt;h2&gt;<span class="text">Descrição do Projeto</span>&lt;/h2&gt;</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>&lt;p&gt;Objetivo do projeto ...&lt;/p&gt;</li>
+                                                    <li>&lt;p&gt;Hospedagem e arquitetura ...&lt;/p&gt;</li>
+                                                    <li>&lt;p&gt;Funcionalidades ...&lt;/p&gt;</li>
+                                                    <li>&lt;p&gt;Gravação de partidas ...&lt;/p&gt;</li>
+                                                    <li>&lt;p&gt;Tecnologias e segurança ...&lt;/p&gt;</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li><span class="tag">&lt;aside&gt;</span>
+                                        <ul>
+                                            <li>&lt;h3&gt;<span class="text">Informações do Projeto</span>&lt;/h3&gt;</li>
+                                            <li>&lt;div class="aside-card"&gt;Integrantes&lt;/div&gt;</li>
+                                            <li>&lt;div class="aside-card"&gt;Recursos&lt;/div&gt;</li>
+                                            <li>&lt;div class="aside-card"&gt;Links&lt;/div&gt;</li>
+                                            <li>&lt;div class="aside-card"&gt;Objetivos AA2&lt;/div&gt;</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><span class="tag">&lt;footer&gt;</span>
+                                <ul>
+                                    <li>&lt;p&gt;Lines of Action Web — Jogo online ...&lt;/p&gt;</li>
+                                    <li>&lt;p&gt;Projeto desenvolvido para a disciplina ...&lt;/p&gt;</li>
+                                    <li>&lt;address&gt;&lt;a href="mailto:vitor.fsz@proton.me"&gt;vitor.fsz@proton.me&lt;/a&gt;&lt;/address&gt;</li>
+                                    <li>&lt;address&gt;&lt;a href="mailto:bernardofranceschina@gmail.com"&gt;bernardofranceschina@gmail.com&lt;/a&gt;&lt;/address&gt;</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

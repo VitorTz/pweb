@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lines of Action</title>
+    <link rel="icon" href="https://placehold.co/32x32/1e293b/ffffff?text=LOA" type="image/x-icon">
+        
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Lines of Action</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre o Jogo</a></li>    
+                <li><a href="#regras">Regras</a></li>
+                <li><a href="#descricao">Descrição do Projeto</a></li>
+                <li><a href="DOM.html">Árvore DOM</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">        
+        <!-- Conteúdo Principal -->
+        <main>
+            <section id="sobre">
+                <div class="section-title-container">
+                    <h2>Sobre o Jogo</h2>
+                    <div class="tooltip">
+                        <span class="tooltip-trigger">?</span>
+                        <div class="tooltip-content">
+                            Fonte: <a href="https://pt.wikipedia.org/wiki/Lines_of_Action" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <strong>Lines of Action (LoA)</strong> é um jogo eletrônico de tabuleiro para dois jogadores, jogado num tabuleiro 8x8 com vinte e quatro peças (doze pretas e doze brancas), inventado por Claude Soucie por volta de 1960.
+
+                    Foi pela primeira vez publicado por Sid Sacksoan em 1969 em “A Gamut of Games” e foi um sucesso imediato entre os aficionados deste tipo de jogos.
+
+                    O LoA é indicado para maiores de dez anos e tem uma duração média de jogo de meia hora. Até ao momento não foi descoberto nenhuma sequência de jogadas que garanta uma probabilidade vitória de 100%. 
+                </p>
+                
+            </section>
+
+            <section id="regras">
+                <div class="section-title-container">
+                    <h2>Regras</h2>
+                    <div class="tooltip">
+                        <span class="tooltip-trigger">?</span>
+                        <div class="tooltip-content">
+                            Fonte: <a href="https://pt.wikipedia.org/wiki/Lines_of_Action" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+                <ol>
+                    <li>Cada jogador controla doze peças de uma cor, um jogador controla as peças pretas e o outro as brancas.</li>
+                    <li>As peças pretas são colocadas em duas filas, seis na fila de cima e seis na fila de baixo. As peças brancas são colocadas em duas colunas, seis na coluna da esquerda e seis na coluna da direita.</li>
+                    <li>Jogador com as peças pretas joga primeiro.</li>
+                    <li>Em cada volta, o jogador tem que mover uma peça, um certo número de casas em linha recta. O número de casas é exactamente igual ao número de peças, independentemente da sua cor, que existem na linha de movimento (Lines of Action = “Linhas de Acção”).</li>
+                    <li>O jogador pode saltar por cima das próprias peças.</li>
+                    <li>O jogador não pode saltar por cima das peças do adversário, mas pode captura-las, se a sua peça parar sobre a peça do adversário.</li>
+                    <li>O objectivo do jogo é colocar todas as peças que possui ligadas. As ligações entre peças podem ser verticais, horizontais ou diagonais. O primeiro jogador a consegui-lo é o vencedor.</li>
+                    <li>Se um jogador ficar reduzido, por capturas, a uma peça, esse jogador é o vencedor.</li>
+                    <li>Se numa jogada, ocorrer uma situação de vitória para ambos os jogadores (regra 7), o jogador que efectuou essa jogada é o vencedor.</li>
+                    <li>Se um jogador não conseguir fazer nenhuma jogada, este jogador perde.</li>
+                </ol>
+            </section>
+
+            <section id="descricao">
+                <div class="section-title-container">
+                    <h2>Descrição do Projeto</h2>                    
+                </div>
+
+                <p>Este projeto tem como objetivo o desenvolvimento de uma aplicação web interativa para o jogo Lines of Action (LOA) e deve suportar tanto desktop como dispositivos móveis. </p>
+
+                <br>
+                
+                <p>A aplicação será hospedada no servidor virtual da UFSC (VPS-UFSC) e seguirá a arquitetura MVC.</p>
+                
+                <br>
+
+                <p>O sistema permitirá que os usuários joguem partidas contra outros jogadores ou contra um bot, com suporte a rankings, scores e persistência de dados em um banco MongoDB. A interface contará com um tabuleiro interativo, modos de visualização claro e escuro, avatares personalizáveis e funcionalidades como chat em tempo real, vídeochat com áudio entre jogadores, e fila dinâmica para gerenciamento de partidas.</p>
+                
+                <br>
+
+                <p>As partidas poderão ser gravadas em vídeo e áudio utilizando FFMPEG, armazenadas no banco de dados e compartilhadas por URL, com player embutido no sistema. Além disso, será implementado gerenciamento de filas, controle de avatares e administração do espaço de armazenamento de vídeos.</p>                    
+
+                <br>
+
+                <p>A aplicação será desenvolvida com HTML5, CSS3, JavaScript e MongoDB. Também serão aplicadas práticas de segurança, como proteção contra XSS, CSRF, injeção de código e exposição de dados sensíveis.                    </p>                    
+                
+            </section>
+            
+        </main>
+        
+        <aside>
+            <h3>Informações do Projeto</h3>
+            <div class="aside-card">
+                <h4>Integrantes</h4>
+                <ul>
+                    <li>Bernardo Carlos Franceschina</li>
+                    <li>Vitor Fernando da Silva</li>
+                </ul>
+            </div>
+            <div class="aside-card">
+                <h4>Recursos usados no projeto</h4>
+                <ul>
+                    <li>Javascript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+            
+            <div class="aside-card">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://presencial.moodle.ufsc.br/course/view.php?id=32192" target="_blank">Curso</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://github.com/VitorTz/lines-of-action" target="_blank">GitHub</a></li>                    
+                </ul>                
+            </div>
+            <div class="aside-card">
+                <h4>Objetivos da AA2</h4>
+                <p>
+                    Desenvolver uma página web estática utilizando HTML e CSS, com codificação UTF-8, visando a familiarização com a estrutura de páginas, elementos semânticos e conceitos básicos de estilização.
+                </p>
+            </div>
+        </aside>
+
+    </div>
+    
+    <footer> 
+        <p>Lines of Action Web — Jogo online com chat, rankings e gravação de partidas.</p> <p>Projeto desenvolvido para a disciplina de Programação para Web (UFSC) 2025/2</p> 
+        <address>
+            <a href="mailto:vitor.fsz@proton.me">vitor.fsz@proton.me</a>
+        </address>
+        <address>
+            <a href="mailto:bernardofranceschina@gmail.com">bernardofranceschina@gmail.com</a>
+        </address>
+    </footer>
+
+</body>
+</html>

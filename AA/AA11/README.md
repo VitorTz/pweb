@@ -1,16 +1,10 @@
 # Monitor de Mensagens TCP/UDP com WebSocket
 
-Este projeto implementa um monitor web que exibe, em tempo real, mensagens recebidas por um servidor Python através de sockets TCP e UDP. O servidor encaminha essas mensagens para a interface web usando WebSockets.
-
-## Autoria
-
-* **Autor(es):** [Insira seu Nome/Matrícula aqui]
+* **Alunos:** Vitor Fernando da Silva e Bernardo Carlos Franceschina [Grupo 09]
 * **Disciplina:** Programação para Web
-* **Professor:** [Nome do Professor]
+* **Professor:** Wyllian Bezerra da Silva
 
 ## Arquitetura
-
-O sistema é composto por três partes principais:
 
 1.  **Servidor Python (`server.py`):**
     * Um servidor `asyncio` que executa quatro serviços concorrentemente:
@@ -26,86 +20,93 @@ O sistema é composto por três partes principais:
     * Mostra o status do servidor (Online/Offline).
     * Renderiza as mensagens recebidas, atualiza contadores e permite a filtragem.
 
-3.  **Clientes de Teste (`tcp_client.py`, `udp_client.py`):**
-    * Scripts Python fornecidos para enviar mensagens TCP (porta 8080) e UDP (porta 8081) ao servidor e verificar o funcionamento.
+3.  **Clientes (`tcp_client.py`, `udp_client.py`):**
+    * Scripts python fornecidos para enviar mensagens TCP (porta 8080) e UDP (porta 8081) ao servidor.
 
 ## Requisitos de Instalação
 
 * Python 3.7 ou superior.
-* Bibliotecas Python: `aiohttp` e `websockets`.
+* Bibliotecas descritas no arquivo requirements.txt
 
-## Roteiro de Instalação e Configuração
+## Configuração
 
 1.  **Clone ou Baixe os Arquivos:**
     * Certifique-se de ter todos os arquivos na estrutura correta.
 
 2.  **Estrutura de Pastas Esperada:**
     ```
-    /seu-projeto/
-    |-- server.py         (O servidor principal)
-    |-- index.html        (A página web)
-    |-- tcp_client.py     (Cliente de teste)
-    |-- udp_client.py     (Cliente de teste)
+    /AA11/
+    |-- server.py         (Servidor)
+    |-- index.html        (Página web)
+    |-- tcp_client.py     (Cliente TCP)
+    |-- udp_client.py     (Cliente UDP)
+    |-- requirements.txt  (Bibliotecas python)
     |-- /css/
-    |   |-- ws.css        (O CSS fornecido)
+    |   |-- ws.css        (css da página web)
     |-- /js/
-    |   |-- ws.js         (O JavaScript do cliente)
+    |   |-- ws.js         (Javascript da página web)
     ```
 
 3.  **Instale as Dependências Python:**
-    * Abra um terminal ou prompt de comando.
-    * Execute o seguinte comando para instalar as bibliotecas necessárias:
+
     ```bash
-    pip install aiohttp websockets
+    pip install -r requirements.txt
     ```
 
-## Roteiro de Execução e Teste
+## Execução
 
-1.  **Inicie o Servidor Principal:**
-    * No terminal, navegue até a pasta do projeto.
-    * Execute o servidor Python:
+1.  **Servidor Principal:**
+    * Na pasta raiz do projeto, execute o arquivo do servidor python.
+    
     ```bash
     python server.py
     ```
-    * Você verá logs indicando que os servidores HTTP e WebSocket foram iniciados. O servidor HTTP estará acessível em `http://localhost:8000`.
+    
+    * Você verá logs indicando que os servidores HTTP e WebSocket foram iniciados. O servidor HTTP deve ser acessado em `http://localhost:8000`.
 
-2.  **Acesse o Monitor Web:**
-    * Abra seu navegador (Chrome, Firefox, etc.) e acesse a URL:
-    * **`http://localhost:8000`**
-    * A página deve carregar. O status inicial será "Servidor Offline" (pois os listeners TCP/UDP ainda não estão rodando).
+2.  **Página web:**
+    * Abra seu navegador e acesse **`http://localhost:8000`**
+    * A página irá carregar e o status inicial do servidor será **offline**.
 
-3.  **Inicie os Listeners TCP/UDP:**
-    * No monitor web, clique no botão **"Iniciar Servidor"**.
-    * O status deve mudar para "Iniciando servidor..." e depois para "Servidor Online" (com o ícone verde).
+3.  **Listeners TCP/UDP:**
+    * Na página web, clique no botão **"Iniciar Servidor"**.
+    * O status deve mudar para "Iniciando servidor..." e depois para "Servidor Online".
     * No terminal onde o `server.py` está rodando, você verá logs indicando que os servidores TCP e UDP foram iniciados nas portas 8080 e 8081.
 
-4.  **Teste o Cliente TCP:**
-    * Abra um **novo terminal**.
+
+## Testes
+
+1.  **Teste o Cliente TCP:**
+    * Abra um **novo terminal** e navegue até a raiz do projeto.
     * Execute o cliente TCP:
+    
     ```bash
     python tcp_client.py
     ```
+    
     * Quando solicitado `URL do servidor`, apenas pressione **Enter** para usar o padrão (`http://localhost:8080`).
-    * Digite uma mensagem (ex: "Ola TCP") e pressione **Enter**.
-    * **Verificação:**
+    * Digite uma mensagem e pressione **Enter**.    
         * No monitor web, uma nova mensagem com a flag **TCP** deve aparecer.
         * O contador "Mensagens TCP" deve incrementar.
-        * No terminal do cliente TCP, você deve receber a resposta: "Resposta do servidor: TCP MENSAGEM RECEBIDA: Ola TCP".
+        * No terminal do cliente TCP, você deve receber a resposta: "Resposta do servidor: [TCP] Ola TCP".
 
-5.  **Teste o Cliente UDP:**
-    * Abra um **terceiro terminal**.
+2.  **Teste o Cliente UDP:**
+    * Abra um **terceiro terminal** e navegue até a raiz do projeto.
     * Execute o cliente UDP:
+
     ```bash
     python udp_client.py
     ```
+    
     * Quando solicitado `URL do servidor`, apenas pressione **Enter** para usar o padrão (`http://localhost:8081`).
-    * Digite uma mensagem (ex: "Ola UDP") e pressione **Enter**.
-    * **Verificação:**
+    * Digite uma mensagem e pressione **Enter**.
         * No monitor web, uma nova mensagem com a flag **UDP** deve aparecer.
         * O contador "Mensagens UDP" deve incrementar.
-        * No terminal do cliente UDP, você deve receber a resposta: "Resposta do servidor: UDP MENSAGEM RECEBIDA: Ola UDP".
+        * No terminal do cliente UDP, você deve receber a resposta: "Resposta do servidor: [UDP] Ola UDP".
 
-6.  **Teste os Controles Adicionais:**
-    * **Filtros (Tabs):** Clique nas abas "TCP" e "UDP" para verificar se as mensagens são filtradas corretamente.
-    * **Limpar Mensagens:** Clique em "Limpar Mensagens" para remover todas as mensagens e zerar os contadores.
-    * **Parar Servidor:** Clique em "Parar Servidor". O status deve mudar para "Servidor Offline". Tentar enviar novas mensagens dos clientes TCP/UDP resultará em erro de conexão, provando que os listeners foram desligados.
+3.  **Controles Adicionais:**
+    * **Filtros (Tabs):** Clique nas abas "TCP" e "UDP" para filtrar as mensagens por protocolo
+    
+    * **Limpar Mensagens:** Clique em "Limpar Mensagens" para remover todas as mensagens.
+    
+    * **Parar Servidor:** Clique em "Parar Servidor". O status deve mudar para "Servidor Offline". Neste estado, enviar novas mensagens dos clientes TCP/UDP resultará em erro de conexão.
